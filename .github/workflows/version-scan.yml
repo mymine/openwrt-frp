@@ -9,16 +9,16 @@ jobs:
   check:
     name: Check Version
     runs-on: ubuntu-latest
-    if: ${{ github.repository_owner }} == "kuoruan"
+    if: ${{ github.repository_owner }} == "mymine"
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           token: ${{ secrets.PAT }}
 
       - name: Get Latest Version
         id: get_version
-        uses: actions/github-script@v3
+        uses: actions/github-script@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           result-encoding: string
